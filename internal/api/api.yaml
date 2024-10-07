@@ -1,0 +1,26 @@
+# internal/api/api.yaml
+
+openapi: 3.0.0
+info:
+  title: Go-Commerce API
+  version: 1.0.0
+paths:
+  /health:
+    get:
+      summary: Health Check
+      description: Returns the health status of the server.
+      responses:
+        '200':
+          description: Server is healthy
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+components:
+  schemas:
+    HealthResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "OK"
